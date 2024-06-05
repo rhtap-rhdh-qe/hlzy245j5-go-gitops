@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: hlzy245j5-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: hlzy245j5-go 
+  name: hlzy245j5-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: hlzy245j5-go
+    weight: 100 
